@@ -28,17 +28,34 @@ const addTodo = () => {
   input.value = '';
 };
 
+const completeTodo = (event) => {
+  const isComplete = event.target.dataset.complete = 'complete';
+
+  if (isComplete) {
+    event.target.classList.toggle('complete-done');
+
+    const mainParentNode = event.target.closest('.todo');
+    mainParentNode.classList.toggle('todo-complete');
+
+    const text = document.querySelector('.text');
+    text.classList.toggle('text-done');
+  }
+};
+
 const trashTodo = (event) => {
   const isTrash = event.target.dataset.trash === 'trash';
 
   if (isTrash) {
     const mainParentNode = event.target.closest('.todo');
+
     const todoId = +mainParentNode.dataset.id;
+
     todoData = todoData.filter((el) => {
       if (el.id !== todoId) {
         return el;
       }
     });
+
     renderTodos();
   }
 };
@@ -46,3 +63,5 @@ const trashTodo = (event) => {
 button.addEventListener('click', addTodo);
 
 output.addEventListener('click', trashTodo);
+
+output.addEventListener('click', completeTodo);
