@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: #d9d6d6;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  color: #219653;
+  font-size: 60px;
+  font-family: Chonburi, cursive;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-family: "Krona One", sans-serif;
+}
+
+.input {
+  width: 360px;
+  height: 75px;
+  margin-right: 20px;
+  padding: 20px 24px;
+  font-size: 25px;
+  border: 1px solid #b4b3b3;
+  border-radius: 14px;
+  outline: none;
+}
+
+.btn {
+  width: 160px;
+  height: 72px;
+  padding: 25px;
+  color: #fff;
+  font-size: 19px;
+  background: #219653;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 550px;
+  height: 70px;
+  padding: 20px 24px;
+  font-size: 24px;
+  font-family: "Krona One", sans-serif;
+  background: #f2f2f2;
+  border-radius: 18px;
+}
+
+.todo-complete {
+  background: #bebebe;
+}
+
+.text {
+  background: transparent;
+}
+
+.text-done {
+  text-decoration-line: line-through;
+  color: #828282;
+}
+
+.icon-wrapper {
+  display: flex;
+  gap: 15px;
+  background: transparent;
+}
+
+.complete {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid #219653;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.complete-done {
+  background: #219653;
+}
+
+.trash {
+  width: 40px;
+  height: 40px;
+  background-color: #eb5757;
+  border-radius: 14px;
+  cursor: pointer;
+}
