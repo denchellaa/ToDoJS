@@ -13,8 +13,12 @@ const renderTodos = () => {
       <div class="todo ${el.isCompleted ? 'todo-complete' : ''}" data-id="${el.id}">
         <span class="text ${el.isCompleted ? 'text-done' : ''}">${el.value}</span>
             <div class="icon-wrapper">
-                  <div class="complete ${el.isCompleted ? 'complete-done' : ''}" data-complete="complete"></div>
-                  <div class="trash" data-trash="trash"></div>
+                  <div class="complete ${el.isCompleted ? 'complete-done' : ''}" data-complete="complete">
+                    ${el.isCompleted ? '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="17" fill="none"><path stroke="#fff" stroke-linecap="round" stroke-width="3" d="M23.743 1.743 10.95 14.536a1 1 0 0 1-1.414 0L2.479 7.479"/></svg>' : ''}
+                        </div>
+                  <div class="trash" data-trash="trash">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" fill="none"><path stroke="#fff" stroke-width="3" d="M1.731 4.318a2 2 0 0 1 1.998-2.09h10.542a2 2 0 0 1 1.998 2.09l-.637 14a2 2 0 0 1-1.998 1.91H4.366a2 2 0 0 1-1.998-1.91l-.637-14Z"/></svg>
+                </div>
             </div>
       </div>
     `;
@@ -43,6 +47,11 @@ const completeTodo = (event) => {
     const text = document.querySelector('.text');
     text.classList.toggle('text-done');
 
+    if (event.target.classList.contains('complete-done')) {
+      event.target.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="17" fill="none"><path stroke="#fff" stroke-linecap="round" stroke-width="3" d="M23.743 1.743 10.95 14.536a1 1 0 0 1-1.414 0L2.479 7.479"/></svg>';
+    } else {
+      event.target.innerHTML = '';
+    }
     const todoId = +mainParentNode.dataset.id;
 
     todoData = todoData.map((el) => {
